@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNYT CALCULATOR</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .calculator {
+            width: 320px;
+            background-color: #2c3e50;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .brand {
+            color: #ecf0f1;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .display {
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: right;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        .previous-operand {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 1.2rem;
+            min-height: 24px;
+        }
+
+        .current-operand {
+            color: #000;
+            font-size: 2.2rem;
+            font-weight: bold;
+            min-height: 36px;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 12px;
+        }
+
+        button {
+            border: none;
+            border-radius: 8px;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background-color: #34495e;
+            color: white;
+            transition: all 0.2s ease;
+            box-shadow: 0 3px 0 #2c3e50;
+        }
+
+        button:hover {
+            background-color: #3d566e;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 1px 0 #2c3e50;
+        }
+
+        .operation {
+            background-color: #3498db;
+            box-shadow: 0 3px 0 #2980b9;
+        }
+
+        .operation:hover {
+            background-color: #3ca0e0;
+        }
+
+        .span-two {
+            grid-column: span 2;
+            background-color: #e74c3c;
+            box-shadow: 0 3px 0 #c0392b;
+        }
+
+        .span-two:hover {
+            background-color: #ec7063;
+        }
+
+        .scientific {
+            background-color: #95a5a6;
+            box-shadow: 0 3px 0 #7f8c8d;
+            font-size: 1rem;
+            padding: 12px 0;
+        }
+
+        .scientific:hover {
+            background-color: #a6b5b6;
+        }
+
+        /* Equal button special styling */
+        button.operation[value="="] {
+            background-color: #2ecc71;
+            box-shadow: 0 3px 0 #27ae60;
+        }
+
+        button.operation[value="="]:hover {
+            background-color: #3dd47d;
+        }
+
+        /* Clear button special styling */
+        button[value="AC"] {
+            background-color: #f39c12;
+            box-shadow: 0 3px 0 #d35400;
+        }
+
+        button[value="AC"]:hover {
+            background-color: #f4a942;
+        }
+
+        /* Delete button special styling */
+        button[value="DEL"] {
+            background-color: #9b59b6;
+            box-shadow: 0 3px 0 #8e44ad;
+        }
+
+        button[value="DEL"]:hover {
+            background-color: #a56bbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="brand">MNYT CALCULATOR</div>
+        <div class="display">
+            <div class="previous-operand"></div>
+            <div class="current-operand">0</div>
+        </div>
+        
+        <div class="buttons-grid">
+            <!-- First row -->
+            <button class="span-two">AC</button>
+            <button>DEL</button>
+            <button class="operation">÷</button>
+            
+            <!-- Second row -->
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operation">×</button>
+            
+            <!-- Third row -->
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operation">-</button>
+            
+            <!-- Fourth row -->
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operation">+</button>
+            
+            <!-- Fifth row -->
+            <button class="span-two">0</button>
+            <button>.</button>
+            <button class="operation">=</button>
+            
+            <!-- Scientific functions row -->
+            <button class="scientific">sin</button>
+            <button class="scientific">cos</button>
+            <button class="scientific">tan</button>
+            <button class="scientific">log</button>
+            
+            <!-- More scientific functions -->
+            <button class="scientific">√</button>
+            <button class="scientific">x²</button>
+            <button class="scientific">x^y</button>
+            <button class="scientific">π</button>
+            
+            <!-- Additional functions -->
+            <button class="scientific">(</button>
+            <button class="scientific">)</button>
+            <button class="scientific">%</button>
+            <button class="scientific">!</button>
+        </div>
+    </div>
+</body>
+</html>
